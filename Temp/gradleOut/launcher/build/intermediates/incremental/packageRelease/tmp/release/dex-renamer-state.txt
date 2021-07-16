@@ -1,4 +1,4 @@
-#Thu Jul 15 15:07:37 CEST 2021
-base.0=D\:\\game\\game_dev\\projet_ar\\projet_ar\\Temp\\gradleOut\\launcher\\build\\intermediates\\dex\\release\\out\\classes.dex
+#Fri Jul 16 11:15:50 CEST 2021
+base.0=G\:\\Dev\\PROJET AR\\Temp\\gradleOut\\launcher\\build\\intermediates\\dex\\release\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

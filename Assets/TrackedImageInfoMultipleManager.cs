@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
@@ -22,6 +23,7 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
     private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
     public Vector3 posa;
     public Vector3 posb;
+    private Vector2 startPosition;
   
 
     void Awake()
@@ -54,7 +56,18 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
         m_TrackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
     }
 
-    
+    private void Update()
+    {
+        HandleSizeChange();
+       
+       if(arObjectsToPlace != null)
+        {
+            foreach(GameObject arObject in arObjectsToPlace)
+            {
+                arObject.transform.localScale = scaleFactor;
+            }
+        }
+    }
 
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
@@ -157,5 +170,39 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
         //show toast
         toastObject.Call("show");
 
+    }
+
+    private void HandleSizeChange(){
+        if(Input.touchCount > 0){
+            Touch currentTouch = Input.GetTouch(0);
+            if(currentTouch.phase == TouchPhase.Ended){
+                Vector2 endPosition = currentTouch.position;
+                HandleSwipe(startPosition, endPosition);
+            } else if (currentTouch.phase == TouchPhase.Began) {
+                startPosition = currentTouch.position;
+            }
+        }
+    }
+    private void HandleSwipe(Vector2 startPosition, Vector2 endPosition)
+    {
+        bool isUpwardSwipe = startPosition.y < endPosition.y;
+        bool isDownwardSwipe = startPosition.y > endPosition.y;
+
+        if(isUpwardSwipe)
+        {
+            scaleFactor.x = scaleFactor.x + 0.1f;
+            scaleFactor.y = scaleFactor.y + 0.1f;
+            scaleFactor.z = scaleFactor.z + 0.1f;
+        }
+        else if(isDownwardSwipe)
+        {
+            if( scaleFactor.x > 0.1f && scaleFactor.y > 0.1f && scaleFactor.z > 0.1f ) {
+                scaleFactor.x = scaleFactor.x - 0.1f;
+                scaleFactor.y = scaleFactor.y - 0.1f;
+                scaleFactor.z = scaleFactor.z - 0.1f;
+            } else {
+                scaleFactor = new Vector3(0.1f,0.1f,0.1f);
+            }
+        }
     }
 }

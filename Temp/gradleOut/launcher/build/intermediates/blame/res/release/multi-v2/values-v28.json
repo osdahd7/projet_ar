@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\game\\game_dev\\projet_ar\\projet_ar\\Temp\\gradleOut\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v28\\values-v28.xml",
+            "outputFile": "G:\\Dev\\PROJET AR\\Temp\\gradleOut\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v28\\values-v28.xml",
             "map": [
                 {
-                    "source": "D:\\game\\game_dev\\projet_ar\\projet_ar\\Temp\\gradleOut\\launcher\\src\\main\\res\\values-v28\\styles.xml",
+                    "source": "G:\\Dev\\PROJET AR\\Temp\\gradleOut\\launcher\\src\\main\\res\\values-v28\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "0",

@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\game\\game_dev\\projet_ar\\projet_ar\\Temp\\gradleOut\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "outputFile": "G:\\Dev\\PROJET AR\\Temp\\gradleOut\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\game\\game_dev\\projet_ar\\projet_ar\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\ids.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "46",
-                        "endOffsets": "97"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "45",
-                        "endOffsets": "96"
-                    }
-                },
-                {
-                    "source": "D:\\game\\game_dev\\projet_ar\\projet_ar\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\strings.xml",
+                    "source": "G:\\Dev\\PROJET AR\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "2,2",
@@ -38,7 +21,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\auto\\.gradle\\caches\\transforms-2\\files-2.1\\6b2eff82af4ce35dab4257dc55bbce1f\\arcore_client\\res\\values\\values.xml",
+                    "source": "G:\\Dev\\PROJET AR\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "5,2,7",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "190,53,288",
+                        "endLines": "6,4,10",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "286,188,513"
+                    },
+                    "to": {
+                        "startLines": "10,12,15",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "662,762,900",
+                        "endLines": "11,14,18",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "757,895,1122"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\RoBiN\\.gradle\\caches\\transforms-2\\files-2.1\\6b2eff82af4ce35dab4257dc55bbce1f\\arcore_client\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
@@ -55,22 +57,20 @@
                     }
                 },
                 {
-                    "source": "D:\\game\\game_dev\\projet_ar\\projet_ar\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\styles.xml",
+                    "source": "G:\\Dev\\PROJET AR\\Temp\\gradleOut\\launcher\\src\\main\\res\\values\\ids.xml",
                     "from": {
-                        "startLines": "5,2,7",
-                        "startColumns": "0,0,0",
-                        "startOffsets": "190,53,288",
-                        "endLines": "6,4,10",
-                        "endColumns": "8,8,8",
-                        "endOffsets": "286,188,513"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "46",
+                        "endOffsets": "97"
                     },
                     "to": {
-                        "startLines": "10,12,15",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "662,762,900",
-                        "endLines": "11,14,18",
-                        "endColumns": "8,8,8",
-                        "endOffsets": "757,895,1122"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "45",
+                        "endOffsets": "96"
                     }
                 }
             ]

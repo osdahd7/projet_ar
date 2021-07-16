@@ -47,7 +47,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 65
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -55,24 +57,26 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1652}
     - Class: 114
-      Script: {instanceID: 2452}
+      Script: {instanceID: 2502}
     - Class: 114
-      Script: {instanceID: 3230}
+      Script: {instanceID: 3280}
     - Class: 114
-      Script: {instanceID: 3236}
+      Script: {instanceID: 3286}
     - Class: 114
-      Script: {instanceID: 3682}
+      Script: {instanceID: 3730}
     - Class: 114
-      Script: {instanceID: 3958}
+      Script: {instanceID: 3734}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4010}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4370}
     - Class: 114
-      Script: {instanceID: 16322}
+      Script: {instanceID: 4728}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -540,6 +544,12 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+      Hash: a6675128a3a95c8b111881b81564bd67
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TrackedImageInfoMultipleManager
+  - hash:
+      serializedVersion: 2
       Hash: 625e4fd6f88b90d1ee9e7c089c3f450d
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
@@ -772,13 +782,7 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 9c0c0fdbc5f6852f4fe9c49760383b30
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TrackedImageInfoMultipleManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/test.unity
-  playerPath: D:/game/game_dev/projet_ar/projet_ar/deneme.apk
+  playerPath: G:/Dev/PROJET AR/app.apk
