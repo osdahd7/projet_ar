@@ -201,6 +201,8 @@ MonoBehaviour:
   - {fileID: 5494723953502026346, guid: 3e7b017a90ea994468859756d46f946b, type: 3}
   - {fileID: 4528684055448815458, guid: 4f75ccaab0c25e3448b08d44d54ccef5, type: 3}
   scaleFactor: {x: 0.1, y: 0.1, z: 0.1}
+  posa: {x: 0, y: 0, z: 0}
+  posb: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

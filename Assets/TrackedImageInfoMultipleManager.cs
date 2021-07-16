@@ -10,27 +10,39 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
 
     [SerializeField]
     private GameObject[] arObjectsToPlace;
+   
 
     [SerializeField]
     private Vector3 scaleFactor = new Vector3(0.1f,0.1f,0.1f);
+    
 
     private ARTrackedImageManager m_TrackedImageManager;
+    private AudioSource audio;
 
     private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
+    public Vector3 posa;
+    public Vector3 posb;
+  
 
     void Awake()
     {
         
-        m_TrackedImageManager = GetComponent<ARTrackedImageManager>();
-        
+         m_TrackedImageManager = GetComponent<ARTrackedImageManager>();
+        audio = gameObject.AddComponent<AudioSource>();
+       
+        Debug.Log(audio);
+
         // setup all game objects in dictionary
-        foreach(GameObject arObject in arObjectsToPlace)
+        foreach (GameObject arObject in arObjectsToPlace)
         {
-            GameObject newARObject = Instantiate(arObject);
+            GameObject newARObject = Instantiate(arObject, Vector3.zero, Quaternion.identity);
             newARObject.name = arObject.name;
             arObjects.Add(arObject.name, newARObject);
+             
         }
+         
     }
+    
 
     void OnEnable()
     {
@@ -42,7 +54,7 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
         m_TrackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
     }
 
-   
+    
 
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
@@ -61,16 +73,38 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
             arObjects[trackedImage.name].SetActive(false);
         }
     }
-
+    private float calculer_distance()
+    {
+       
+        float dist = Vector3.Distance(posa, posb);
+        return dist;
+    }
     private void UpdateARImage(ARTrackedImage trackedImage)
     {
-        // Display the name of the tracked image in the canvas
-       
+        
+        
 
         // Assign and Place Game Object
         AssignGameObject(trackedImage.referenceImage.name, trackedImage.transform.position);
 
-        Debug.Log($"trackedImage.referenceImage.name: {trackedImage.referenceImage.name}");
+        Debug.Log(calculer_distance() + "distance" );
+        if(calculer_distance() < 0.14)
+        {
+            audio.PlayOneShot((AudioClip)Resources.Load("m"));
+             
+            var cubeRenderer = arObjectsToPlace[1].GetComponent<Renderer>();
+            Debug.Log(cubeRenderer +"test couleur");
+            //Call SetColor using the shader property name "_Color" and setting the color to red
+            cubeRenderer.material.SetColor("_Color", Color.red);
+             
+
+        }
+        else
+        {
+            audio.Pause();
+        }
+        // Debug.Log($"trackedImage.referenceImage.name: {trackedImage.referenceImage.name}");
+        //  Debug.Log(trackedImage.transform.position + "position" );
     }
 
     void AssignGameObject(string name, Vector3 newPosition)
@@ -84,11 +118,44 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
             foreach(GameObject go in arObjects.Values)
             {
                 Debug.Log($"Go in arObjects.Values: {go.name}");
-                if(go.name != name)
+                if(go.name == "rouge")
                 {
-                   // go.SetActive(false);
+                  posa = go.transform.position;
                 }
+                if(go.name == "vert")
+                {
+                  posb = go.transform.position;
+                }
+                Debug.Log($"Go in arObjects.Values: {go.transform.position}");
+
             } 
         }
+        
+    }
+    private void showAndroidToast(string toastText)
+    {
+        //create a Toast class object
+        AndroidJavaClass toastClass =
+                    new AndroidJavaClass("android.widget.Toast");
+
+        //create an array and add params to be passed
+        object[] toastParams = new object[3];
+        AndroidJavaClass unityActivity =
+          new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        toastParams[0] =
+                     unityActivity.GetStatic<AndroidJavaObject>
+                               ("currentActivity");
+        toastParams[1] = toastText;
+        toastParams[2] = toastClass.GetStatic<int>
+                               ("LENGTH_LONG");
+
+        //call static function of Toast class, makeText
+        AndroidJavaObject toastObject =
+                        toastClass.CallStatic<AndroidJavaObject>
+                                      ("makeText", toastParams);
+
+        //show toast
+        toastObject.Call("show");
+
     }
 }
