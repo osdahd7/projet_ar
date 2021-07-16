@@ -119,7 +119,7 @@
 67-->G:\Dev\PROJET AR\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:16:5-101
 68            android:name="unity.build-id"
 68-->G:\Dev\PROJET AR\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:16:16-45
-69            android:value="2525bb87-153a-4146-be9c-537c0625bdad" />
+69            android:value="0cdeb174-5e6f-466e-843b-5c8d14cc7bb6" />
 69-->G:\Dev\PROJET AR\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:16:46-98
 70        <meta-data
 70-->G:\Dev\PROJET AR\Temp\gradleOut\unityLibrary\src\main\AndroidManifest.xml:17:5-88
